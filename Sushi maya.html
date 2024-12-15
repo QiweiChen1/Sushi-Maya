@@ -1,0 +1,140 @@
+<DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi Maya</title>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif; 
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, p, a, button {
+            font-family: 'Ubuntu', sans-serif;
+        }
+        header nav {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        header nav ul li:last-child {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .texto-cuadrado {
+            border: 3px solid #000; 
+            padding: 4px; 
+            display: inline-block; 
+            text-align: center;
+            font-size: 12px; 
+            font-family: 'Ubuntu', sans-serif; 
+        }
+        .oculto {
+            display: none;
+        }
+    </style>    
+    <section id="inicio" class="seccion">
+        <h1>¡Bienvenidos a Sushi Maya!</h1>
+        <p>Tu cocina asiática.</p>
+    </section>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio" class="texto-cuadrado"><strong>Inicio</strong></a></li> 
+                <li><a href="#menu" class="texto-cuadrado"><strong>Menú</strong></a></li>
+                <li><a href="#ubicacion" class="texto-cuadrado"><strong>Ubicación</strong></a></li>
+                <li><a href="#contacto" class="texto-cuadrado"><strong>Contacto</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="menu" class="seccion">
+        <h2>Menú</h2>
+        <div class="menu-item">
+            <img src="sushi-roll.jpg" alt="Sushi Roll">
+            <h3>Roll Especial</h3>
+            <p>Ingredientes:. <strong>9.50€</strong></p>
+        </div>
+        <div class="menu-item">
+            <img src="sushi-roll.jpg" alt="Sushi Roll">
+            <h3>Roll Especial</h3>
+            <p>Ingredientes:. <strong>9.50€</strong></p>
+        </div>
+        <div class="menu-item">
+            <img src="sushi-roll.jpg" alt="Sushi Roll">
+            <h3>Roll Especial</h3>
+            <p>Ingredientes:. <strong>9.50€</strong></p>
+        </div>
+    </section>
+    <section id="ubicacion" class="seccion">
+        <h2>Ubicación</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.794691343473!2d-3.920120900000033!3d40.56821090000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd419db32061dde3%3A0x4c2c0520ec880c17!2sSUSHI%20MAYA!5e0!3m2!1ses!2ses!4v1734176052861!5m2!1ses!2ses"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+        <p><strong>Dirección:</strong> Avenida de la Fontanilla, 1, Torrelodones, Madrid</p>
+        <p>Estamos ubicados en el centro comercial Espacio Torrelodones.</p>
+        <p>En la planta baja</p>
+        <p><strong>Horario:</strong> Lunes a Domingo, 12:00 PM - 10:00 PM</p>
+    </section>
+    <section id="contacto" class="seccion">
+        <h2>Contacto</h2>
+        <p>Número de telefono: 653330172</p>
+    </section>
+    <footer>
+        <p>© 2024 Sushi Maya. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.body.style.backgroundColor = "#f0f8ff"; 
+        document.querySelectorAll('section').forEach(section => {
+            section.style.backgroundColor = "#ffffff"; 
+            section.style.borderRadius = "8px"; 
+            section.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)"; 
+            section.style.padding = "20px"; 
+        });
+    </script>
+    <script>
+        document.querySelectorAll('section').forEach(section => {
+            section.style.marginTop = "40px"; 
+        });
+        document.querySelector('#inicio').style.textAlign = "center";
+        document.querySelector('#inicio').style.marginTop = "20px"; 
+    </script>
+    <script>
+    document.querySelectorAll('header nav a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); 
+
+            const target = this.getAttribute('href'); 
+
+            if (target === '#inicio') {
+                document.querySelectorAll('.seccion').forEach(section => {
+                    section.classList.remove('oculto'); 
+                });
+            } else {
+                document.querySelectorAll('.seccion').forEach(section => {
+                    section.classList.add('oculto');
+                });
+                document.querySelector(target).classList.remove('oculto');
+            }
+        });
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
